@@ -36,6 +36,7 @@ describe('async actions', () => {
     const store = mockStore({})
     await store.dispatch(actions.fetchCats())
     await sleep(2000)
+    console.log(store.getActions() === expectedActions)
     expect(store.getActions()).to.eql(expectedActions)
   })
 })
